@@ -104,7 +104,8 @@ groceryRouter.delete('/', (req, res) => {
         DELETE FROM "groceryList"
     `;
     pool    
-        .query((result) => {
+        .query(sqlText)            
+        .then((result) => {
             console.log(`In DELETE(all) (${sqlText})`);
             res.sendStatus(200);
         })
