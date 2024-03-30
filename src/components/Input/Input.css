@@ -1,0 +1,12 @@
+.Input {
+    text-align: center;
+    align-items: center;
+}
+.Input-head {
+    font-size: 20px;
+
+}
+.Input-field {
+    width: 90vw;
+    margin: auto;
+}
