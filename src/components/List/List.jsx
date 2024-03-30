@@ -1,16 +1,43 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import './List.css';
 
 function List() {
     // List array
-    const itemList = [];
+    const [itemList, setItemList] = useState([]);
     // GET
-    
+    const getItems = () => {
+        axios.get('/api/groceries').then((res) => {
+            setItemList(res.data)
+        }).catch((err) => {
+            console.error(err);
+            alert('Something went wrong!');
+        });
+    }
     // DELETE
+    const deleteItem = (id) => {
+        axios.delete(`/api/groceries/${id}`).then((res) => {
+            getItems();
+        }).catch((err) => {
+            console.error(err);
+            alert('Something went wrong!');
+        });
+    } 
 
     // PUT
+    const buyItem = (id) => {
+        axios.put(`/api/groceries/${id}`).then((res) => {
+            getItems();
+        }).catch((err) => {
+            console.error(err);
+            alert('Something went wrong!');
+        });
+    }
 
     // ToDo: hidden buttons
+
+    useEffect(() => {
+        getItems();
+    }, []);
 
     return (
         <div>
@@ -26,8 +53,8 @@ function List() {
                     )}
                     <h4>{item.quantity}{item.unit}</h4>
                     <div>
-                        <button onClick={}>Buy</button>
-                        <button onClick={}>Remove</button>
+                        <button onClick={() => {buyItem(item.id)}}>Buy</button>
+                        <button onClick={() => {deleteItem(item.id)}}>Remove</button>
                     </div>
                 </div>
             ))}
