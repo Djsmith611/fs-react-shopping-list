@@ -85,6 +85,21 @@ groceryRouter.delete('/:id', (req, res) => {
 
 // RESET (PUT change purchase status)
 groceryRouter.put('/', (req, res) => {
+    const sqlText = `
+        UPDATE "groceryList"
+        SET "bought" = false;
+    `;
+    pool
+        .query(sqlText)
+        .then((result) => {
+            console.log(`In PUT(reset) (${sqlText})`);
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.error(err);
+            alert(`ERROR in PUT(full bought reset) (${sqlText})`, err);
+            res.sendStatus(500);
+        });
 
 });
 // CLEAR (DELETE all)
