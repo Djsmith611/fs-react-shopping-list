@@ -40,7 +40,7 @@ function List({ itemList ,getItems, isEditMode }) {
   return (
     <div className="List">
       {itemList.map((item) => (
-        <div key={item.id} className="Item">
+        <div key={item.id} className="Item" onClick={() => {buyItem(item.id)}}>
           <h3 className="Item-header">{item.name}</h3>
           {item.displayImage ? (
             <img src={item.displayImage} alt={item.name} className="Item-image"/>
