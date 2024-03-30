@@ -24,8 +24,7 @@ function App() {
         });
     };
 
-    // PUT
-
+    
     // DELETE
 
     return (

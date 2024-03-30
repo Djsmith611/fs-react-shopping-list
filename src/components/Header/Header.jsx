@@ -2,7 +2,8 @@ import React from 'react';
 import './Header.css';
 
 function Header({ setIsEditMode ,isEditMode, getItems}) {
-
+    
+    // PUT
     const resetBoughtStatus = () => {
         axios
             .put('/api/groceries')
