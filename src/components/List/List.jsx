@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./List.css";
+import axios from 'axios';
 
 function List({ itemList ,getItems, isEditMode }) {
 
@@ -49,8 +50,7 @@ function List({ itemList ,getItems, isEditMode }) {
             </div>
           )}
           <h4>
-            {item.quantity}
-            {item.unit}
+            {item.quantity + ' ' + item.unit}
           </h4>
           {isEditMode && (
             <div>
@@ -59,7 +59,7 @@ function List({ itemList ,getItems, isEditMode }) {
                   buyItem(item.id);
                 }}
               >
-                Buy
+                {item.bought ?  "Mark as Not Bought" : "Buy"}
               </button>
               <button
                 onClick={() => {
