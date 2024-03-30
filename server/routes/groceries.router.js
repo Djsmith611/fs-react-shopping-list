@@ -36,7 +36,6 @@ groceryRouter.post('/', (req, res) => {
         })
         .catch((err) => {
             console.error(err);
-            alert(`ERROR in POST (${sqlText})`, err);
             res.sendStatus(500);
         });
 
@@ -58,7 +57,6 @@ groceryRouter.put('/:id', (req, res) => {
         })
         .catch((err) => {
             console.error(err);
-            alert(`ERROR in PUT(single item: ${itemId}) (${sqlText})`, err);
             res.sendStatus(500);
         });
 });
@@ -78,7 +76,6 @@ groceryRouter.delete('/:id', (req, res) => {
         })
         .catch((err) => {
             console.error(err);
-            alert(`ERROR in DELETE(single item: ${itemId}) (${sqlText})`, err);
             res.sendStatus(500);
         });
 });
@@ -97,7 +94,6 @@ groceryRouter.put('/', (req, res) => {
         })
         .catch((err) => {
             console.error(err);
-            alert(`ERROR in PUT(full bought reset) (${sqlText})`, err);
             res.sendStatus(500);
         });
 
@@ -114,7 +110,6 @@ groceryRouter.delete('/', (req, res) => {
         })
         .catch((err) => {
             console.error(err);
-            alert(`ERROR in DELETE(all) (${sqlText})`, err);
             res.sendStatus(500);
         });
 });
