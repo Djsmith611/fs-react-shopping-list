@@ -27,7 +27,9 @@ function App() {
         <div className="App">
             <Header setIsEditMode={setIsEditMode} getItems={getItems} isEditMode={isEditMode} />
             <main className="App-main">
+            <h2 className="Form-title">Add An Item</h2>
             <Subheader getItems={getItems} itemList={itemList} />
+            <h2 className="List-title">List</h2>
             <List itemList={itemList} getItems={getItems} isEditMode={isEditMode}/>
             </main>
         </div>

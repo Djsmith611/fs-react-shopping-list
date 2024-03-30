@@ -8,4 +8,5 @@
     margin-bottom: 10px;
     background-image: linear-gradient(to right, rgb(86, 97, 171), black);
     padding: 50px;
+    border-radius: 50px;
 }

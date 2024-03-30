@@ -10,3 +10,8 @@
     border-radius: 10px;
     box-shadow: 5px 5px 15px black;
 }
+.Form-title {
+color: aliceblue;
+  text-align: center;
+  font-size: 50px;
+}
