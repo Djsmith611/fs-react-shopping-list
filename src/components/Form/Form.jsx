@@ -37,10 +37,10 @@ function Form({setIsEditMode, getItems}) {
 
     return(
         <form onSubmit={() => {addItem(e)}}>
-            <input type="text" value={itemName} onChange={() => {setItemName}} />
-            <input type="text" value={itemImage} onChange={() => {setItemImage}} />
-            <input type="text" value={itemUnit} onChange={() => {setItemUnit}} />
-            <input type="number" value={itemQuantity} onChange={() => {setItemQuantity}}/>
+            <input type="text" value={itemName} onChange={() => {setItemName}} placeholder="Item name" />
+            <input type="text" value={itemImage} onChange={() => {setItemImage}} placeholder="Image Link" />
+            <input type="text" value={itemUnit} onChange={() => {setItemUnit}} placeholder="Unit of measurement" />
+            Amount:<input type="number" value={itemQuantity} onChange={() => {setItemQuantity}} />
             <input type="button" value='Add' />
         </form>
     );
