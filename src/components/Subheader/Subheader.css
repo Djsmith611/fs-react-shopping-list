@@ -1,0 +1,11 @@
+.Subheader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(to right, rgb(86, 97, 171), black);
+    padding: 50px;
+}

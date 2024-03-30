@@ -1,6 +1,12 @@
 .Form {
+    height: 350px;
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    
+    width: 25vw;
+    margin: auto;
+    background-color: rgb(102, 142, 181);
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px black;
 }

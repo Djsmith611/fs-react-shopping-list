@@ -4,9 +4,20 @@
 }
 .Input-head {
     font-size: 20px;
-
+    color: black;
 }
 .Input-field {
-    width: 90vw;
+    width: 90%;
+    text-align: center;
     margin: auto;
+    border-radius: 10px;
+    background-color: rgb(151, 164, 212);
+}
+.Input-submit {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgb(59, 65, 86);
+    color: aliceblue;
 }

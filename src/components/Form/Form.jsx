@@ -3,7 +3,7 @@ import axios from 'axios';
 import "./Form.css"
 import Input from "../Input/Input.jsx"
 
-function Form({setIsEditMode, getItems}) {
+function Form({ getItems}) {
     // Input Variables
     const [itemName, setItemName] = useState('');
     const [itemImage, setItemImage] = useState('');
@@ -13,6 +13,7 @@ function Form({setIsEditMode, getItems}) {
     const [inputs, setInputs] = useState([
         {
             head: "Name of Item:",
+            class:"Input-field",
             type:"text",
             value:itemName,
             onChange:(e) => {setItemName(e.target.value)},
@@ -20,6 +21,7 @@ function Form({setIsEditMode, getItems}) {
         },
         {
             head:"Image Link (optional):",
+            class:"Input-field",
             type:"text",
             value:itemImage,
             onChange:(e) => {setItemImage(e.target.value)},
@@ -27,6 +29,7 @@ function Form({setIsEditMode, getItems}) {
         },
         {
             head:"Unit:",
+            class:"Input-field",
             type:"text",
             value:itemUnit,
             onChange:(e) => {setItemUnit(e.target.value)},
@@ -34,6 +37,7 @@ function Form({setIsEditMode, getItems}) {
         },
         {
             head:"Quantity:",
+            class:"Input-field",
             type:"number",
             value:itemQuantity,
             onChange:(e) => {setItemQuantity(e.target.value)},
@@ -41,6 +45,7 @@ function Form({setIsEditMode, getItems}) {
         },
         {
             type:"submit",
+            class:"Input-submit",
             value:"Add"
         }
     ]);

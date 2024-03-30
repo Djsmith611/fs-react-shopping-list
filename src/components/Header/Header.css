@@ -1,5 +1,28 @@
-.banner-header {
-  background-color: silver;
+.Header {
+  background: linear-gradient(to right, black, rgb(0, 106, 255));
   text-align: center;
   padding: 0.25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+}
+.Header-title {
+  margin: auto;
+}
+.Header-button-container {
+  margin: auto;
+  width: 100px;
+  display: flex;
+}
+
+.Header-edit-button {
+  margin: auto;
+  width: fit-content;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.233);
+  color: rgb(216, 93, 93);
+  align-self: left;
 }

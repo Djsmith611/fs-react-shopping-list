@@ -3,9 +3,10 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: center;
-  background-color: rgb(188, 23, 166);
+  background-color: rgb(23, 163, 188);
   padding: 10px;
-  border-radius: 10px;
+  margin: auto;
+  margin-top: 0;
 }
 
 .Item {

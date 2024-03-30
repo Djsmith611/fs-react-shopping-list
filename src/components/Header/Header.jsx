@@ -22,12 +22,15 @@ function Header({ setIsEditMode ,isEditMode, getItems}) {
     }
     
     return (
-        <header className="banner-header">
-            <h1>My Shopping List</h1>
-            <button onClick={toggleEdit}>Edit</button>
-            {isEditMode && (
-                <button onClick={resetBoughtStatus}>Reset Bought Items</button>
-            )}
+        <header className="Header">
+            <h1 className="Header-title">My Shopping List</h1>
+            <div className="Header-button-container">
+                <button className="Header-edit-button" onClick={toggleEdit}>Edit</button>
+                {isEditMode && (
+                    <button className="Header-edit-button" onClick={resetBoughtStatus}>Reset</button>
+                )}
+            </div>
+            
             
         </header>
     );

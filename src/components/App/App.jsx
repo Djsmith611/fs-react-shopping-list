@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Header from '../Header/Header.jsx'
-import Form from '../Form/Form.jsx'
-import List from '../List/List.jsx'
+import Header from '../Header/Header.jsx';
+import List from '../List/List.jsx';
 import './App.css';
+import Subheader from '../Subheader/Subheader.jsx';
 
 
 function App() {
@@ -26,10 +26,8 @@ function App() {
     return (
         <div className="App">
             <Header setIsEditMode={setIsEditMode} getItems={getItems} isEditMode={isEditMode} />
-            <main>
-                <p>Under Construction...</p>
-            <Form getItems={getItems} />
-            <h2>Shopping List</h2>
+            <main className="App-main">
+            <Subheader getItems={getItems} itemList={itemList} />
             <List itemList={itemList} getItems={getItems} isEditMode={isEditMode}/>
             </main>
         </div>
