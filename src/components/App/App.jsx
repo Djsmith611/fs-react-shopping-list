@@ -28,7 +28,7 @@ function App() {
             <Header setIsEditMode={setIsEditMode} getItems={getItems} isEditMode={isEditMode} />
             <main>
                 <p>Under Construction...</p>
-            <Form />
+            <Form getItems={getItems} />
             <h2>Shopping List</h2>
             <List itemList={itemList} getItems={getItems} isEditMode={isEditMode}/>
             </main>
