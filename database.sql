@@ -5,7 +5,8 @@ CREATE TABLE "groceryList" (
     name varchar(100) NOT NULL,
     "displayImage" varchar(2000),
     unit varchar(50) NOT NULL,
-    quantity DECIMAL NOT NULL
+    quantity DECIMAL NOT NULL,
+    bought BOOLEAN DEFAULT FALSE
 );
 
 INSERT INTO "groceryList" ("name", "displayImage", "unit", "quantity")
