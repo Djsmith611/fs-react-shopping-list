@@ -52,15 +52,14 @@ function List({ itemList ,getItems, isEditMode }) {
           <h4>
             {item.quantity + ' ' + item.unit}
           </h4>
+          <input type="checkbox" onChange={() => {
+                  buyItem(item.id)
+                  
+                }} checked={item.bought} ></input>
+              
           {isEditMode && (
             <div>
-              <button
-                onClick={() => {
-                  buyItem(item.id);
-                }}
-              >
-                {item.bought ?  "Mark as Not Bought" : "Buy"}
-              </button>
+                
               <button
                 onClick={() => {
                   deleteItem(item.id);
