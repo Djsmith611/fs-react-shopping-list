@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./List.css";
 
 function List({ itemList ,getItems, isEditMode }) {
+
   
   // DELETE
   const deleteItem = (id) => {
@@ -36,12 +37,12 @@ function List({ itemList ,getItems, isEditMode }) {
   }, []);
 
   return (
-    <div>
+    <div className="List">
       {itemList.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className="Item">
           <h3>{item.name}</h3>
           {item.displayImage ? (
-            <img src={item.displayImage} alt={item.name} />
+            <img src={item.displayImage} alt={item.name} className="List-image"/>
           ) : (
             <div className="no-image">
               <span>No Image</span>
