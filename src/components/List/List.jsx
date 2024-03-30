@@ -41,21 +41,21 @@ function List({ itemList ,getItems, isEditMode }) {
     <div className="List">
       {itemList.map((item) => (
         <div key={item.id} className="Item">
-          <h3>{item.name}</h3>
+          <h3 className="Item-header">{item.name}</h3>
           {item.displayImage ? (
-            <img src={item.displayImage} alt={item.name} className="List-image"/>
+            <img src={item.displayImage} alt={item.name} className="Item-image"/>
           ) : (
             <div className="no-image">
               <span>No Image</span>
             </div>
           )}
-          <h4>
+          <h4 className="Item-quantity">
             {item.quantity + ' ' + item.unit}
           </h4>
           <input type="checkbox" onChange={() => {
                   buyItem(item.id)
                   
-                }} checked={item.bought} ></input>
+                }} checked={item.bought} className="Item-check"></input>
               
           {isEditMode && (
             <div>
