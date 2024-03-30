@@ -71,7 +71,7 @@ groceryRouter.delete('/:id', (req, res) => {
         WHERE "id" = $1
     `
     pool
-        .delete(sqlText, [itemId])
+        .query(sqlText, [itemId])
         .then((result) => {
             console.log(`In DELETE (${sqlText})`);
             res.sendStatus(200);
