@@ -104,7 +104,19 @@ groceryRouter.put('/', (req, res) => {
 });
 // CLEAR (DELETE all)
 groceryRouter.delete('/', (req, res) => {
-
+    const sqlText = `
+        DELETE FROM "groceryList"
+    `;
+    pool    
+        .query((result) => {
+            console.log(`In DELETE(all) (${sqlText})`);
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.error(err);
+            alert(`ERROR in DELETE(all) (${sqlText})`, err);
+            res.sendStatus(500);
+        });
 });
 
 
