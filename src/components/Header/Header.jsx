@@ -15,11 +15,15 @@ function Header({ setIsEditMode ,isEditMode, getItems}) {
                 alert('Something went worng!');
             });
     } 
+
+    const toggleEdit = () => {
+        setIsEditMode(!isEditMode);
+    }
     
     return (
         <header className="banner-header">
             <h1>My Shopping List</h1>
-            <button onClick={setIsEditMode}>Edit</button>
+            <button onClick={toggleEdit}>Edit</button>
             {isEditMode && (
                 <button onClick={resetBoughtStatus}>Reset Bought Items</button>
             )}
