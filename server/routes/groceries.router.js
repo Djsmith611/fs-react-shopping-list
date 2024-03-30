@@ -6,7 +6,7 @@ const pool = require('../modules/pool.js');
 groceryRouter.get('/', (req, res) => {
     const sqlText = `
         SELECT * FROM "groceryList"
-        ORDER BY id;
+        ORDER BY "id";
     `;
     pool
         .query(sqlText)
@@ -44,7 +44,22 @@ groceryRouter.post('/', (req, res) => {
 
 // PUT
 groceryRouter.put('/:id', (req, res) => {
-
+    const itemId = req.params.id;
+    const sqlText = `
+        UPDATE "groceryList"
+        SET "bought" = NOT "bought"
+        WHERE "id" = $1;
+    `;
+    pool
+        .query(sqlText, [itemId])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.error(err);
+            alert(`ERROR in PUT(single item: ${itemId}) (${sqlText})`, err);
+            res.sendStatus(500);
+        });
 });
 
 // DELETE
