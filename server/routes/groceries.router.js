@@ -64,7 +64,21 @@ groceryRouter.put('/:id', (req, res) => {
 
 // DELETE
 groceryRouter.delete('/:id', (req, res) => {
-
+    const itemId = req.params.id;
+    const sqlText = `
+        DELETE FROM "groceryList"
+        WHERE "id" = $1
+    `
+    pool
+        .delete(sqlText, [itemId])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((err) => {
+            console.error(err);
+            alert(`ERROR in DELETE(single item: ${itemId}) (${sqlText})`, err);
+            res.sendStatus(500);
+        });
 });
 
 // RESET (PUT change purchase status)
