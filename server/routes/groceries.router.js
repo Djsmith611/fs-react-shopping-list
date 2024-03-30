@@ -30,7 +30,7 @@ groceryRouter.post('/', (req, res) => {
     `;
     pool
         .query(sqlText, [item.name, item.displayImage, item.unit, item.quantity])
-        .then((res) => {
+        .then((result) => {
             console.log(`In POST (${sqlText})`);
             res.sendStatus(201);
         })
