@@ -24,9 +24,6 @@ function App() {
         });
     };
 
-    
-    // DELETE
-
     return (
         <div className="App">
             <Header setIsEditMode={setIsEditMode} getItems={getItems} isEditMode={isEditMode} />
