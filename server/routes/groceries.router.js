@@ -53,6 +53,7 @@ groceryRouter.put('/:id', (req, res) => {
     pool
         .query(sqlText, [itemId])
         .then((result) => {
+            console.log(`In PUT (${sqlText})`);
             res.sendStatus(200);
         })
         .catch((err) => {
@@ -72,6 +73,7 @@ groceryRouter.delete('/:id', (req, res) => {
     pool
         .delete(sqlText, [itemId])
         .then((result) => {
+            console.log(`In DELETE (${sqlText})`);
             res.sendStatus(200);
         })
         .catch((err) => {
