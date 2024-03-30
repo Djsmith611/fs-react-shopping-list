@@ -1,21 +1,8 @@
 import { useState, useEffect } from "react";
 import "./List.css";
 
-function List({ isEditMode }) {
-  // List array
-  const [itemList, setItemList] = useState([]);
-  // GET
-  const getItems = () => {
-    axios
-      .get("/api/groceries")
-      .then((res) => {
-        setItemList(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Something went wrong!");
-      });
-  };
+function List({ itemList ,getItems, isEditMode }) {
+  
   // DELETE
   const deleteItem = (id) => {
     axios
