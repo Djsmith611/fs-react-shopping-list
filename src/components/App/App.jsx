@@ -30,7 +30,7 @@ function App() {
 
     return (
         <div className="App">
-            <Header setIsEditMode={setIsEditMode} />
+            <Header setIsEditMode={setIsEditMode} getItems={getItems} />
             <main>
                 <p>Under Construction...</p>
             <Form />

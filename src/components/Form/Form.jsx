@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form() {
+function Form({setIsEditMode, getItems}) {
     // Input Variables
     const [itemName, setItemName] = useState('');
     const [itemImage, setItemImage] = useState('');
@@ -19,17 +19,29 @@ function Form() {
         axios
             .post("/api/groceries", data)
             .then((res) => {
-                
+                getItems();
+                clearInputs();
             })
             .catch((err) => {
                 console.error(err);
                 alert("Something went wrong!");
             });
     };
+    
+    const clearInputs = () => {
+        setItemImage('');
+        setItemName('');
+        setItemQuantity(0);
+        setItemUnit('');
     }
-    return(
-        <form>
 
+    return(
+        <form onSubmit={() => {addItem(e)}}>
+            <input type="text" value={itemName} />
+            <input type="text" value={itemImage} />
+            <input type="text" value={itemUnit} />
+            <input type="number" value={itemQuantity}/>
+            <input type="button" value='Add' />
         </form>
     );
 }
