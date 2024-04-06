@@ -66,8 +66,8 @@ groceryRouter.delete('/:id', (req, res) => {
     const itemId = req.params.id;
     const sqlText = `
         DELETE FROM "groceryList"
-        WHERE "id" = $1
-    `
+        WHERE "id" = $1;
+    `;
     pool
         .query(sqlText, [itemId])
         .then((result) => {
@@ -101,7 +101,7 @@ groceryRouter.put('/', (req, res) => {
 // CLEAR (DELETE all)
 groceryRouter.delete('/', (req, res) => {
     const sqlText = `
-        DELETE FROM "groceryList"
+        DELETE FROM "groceryList";
     `;
     pool    
         .query(sqlText)            

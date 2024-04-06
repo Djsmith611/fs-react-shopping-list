@@ -1,17 +1,21 @@
 import "./Input.css";
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+
 
 function Input({input, index}){
     return(
-        <div className="Input" key={index}>
-            <h2 className="Input-head">{input.head && input.head}</h2>
-            <input 
-                className={input.class} 
-                type={input.type} 
+        <Box className="Input" key={index} sx={{ marginBottom: '10px' }}>
+            <TextField 
+                label={input.placeholder} 
                 value={input.value} 
                 onChange={input.onChange ? input.onChange : null}
-                placeholder={input.placeholder}
-            />
-        </div>
+                variant="standard"
+                sx={{
+                    width:'90%'
+                }}
+                />
+        </Box>
     )
 }
 

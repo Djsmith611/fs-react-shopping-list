@@ -4,6 +4,10 @@ import Header from '../Header/Header.jsx';
 import List from '../List/List.jsx';
 import './App.css';
 import Subheader from '../Subheader/Subheader.jsx';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 
 function App() {

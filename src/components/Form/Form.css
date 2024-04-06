@@ -1,7 +1,5 @@
 .Form {
     height: 350px;
-    display: flex;
-    flex-direction: column;
     width: 25vw;
     margin: auto;
     background-color: rgb(102, 142, 181);
@@ -9,9 +7,10 @@
     padding: 10px;
     border-radius: 10px;
     box-shadow: 5px 5px 15px black;
+    text-align: center;
 }
 .Form-title {
-color: aliceblue;
+  color: aliceblue;
   text-align: center;
   font-size: 50px;
 }

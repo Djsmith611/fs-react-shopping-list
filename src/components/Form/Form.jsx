@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from 'axios';
 import "./Form.css"
 import Input from "../Input/Input.jsx"
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 function Form({ getItems}) {
     // Input Variables
@@ -25,7 +28,7 @@ function Form({ getItems}) {
             type:"text",
             value:itemImage,
             onChange:(e) => {setItemImage(e.target.value)},
-            placeholder:"https://"
+            placeholder:"Image Link (optional)"
         },
         {
             head:"Unit:",
@@ -33,7 +36,7 @@ function Form({ getItems}) {
             type:"text",
             value:itemUnit,
             onChange:(e) => {setItemUnit(e.target.value)},
-            placeholder:"box"
+            placeholder:"Unit"
         },
         {
             head:"Quantity:",
@@ -41,12 +44,7 @@ function Form({ getItems}) {
             type:"number",
             value:itemQuantity,
             onChange:(e) => {setItemQuantity(e.target.value)},
-            placeholder:1,
-        },
-        {
-            type:"submit",
-            class:"Input-submit",
-            value:"Add"
+            placeholder:"Amount",
         }
     ]);
 
@@ -80,11 +78,17 @@ function Form({ getItems}) {
 
     return(
         <form onSubmit={(e) => {addItem(e)}} className="Form">
-            {
-                inputs.map((input, index) => (
-                    <Input input={input} key={index}/>
-                ))
-            }
+            
+            <Box sx={{ p: 1, border: '1px dashed grey', height:'95%'}}>
+                <Stack spacing={3}>
+                    {
+                        inputs.map((input, index) => (
+                            <Input input={input} key={index}/>
+                        ))
+                    }
+                    <Button type="submit" variant="contained">Add</Button>
+                </Stack>
+            </Box>
         </form>
     );
 }
