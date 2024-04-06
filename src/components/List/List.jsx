@@ -1,10 +1,20 @@
 import { useState, useEffect } from "react";
 import "./List.css";
-import axios from 'axios';
+import axios from "axios";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Avatar from "@mui/material/Avatar";
+import { red } from "@mui/material/colors";
+import IconButton from "@mui/material/IconButton";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import Checkbox from "@mui/material/Checkbox";
 
-function List({ itemList ,getItems, isEditMode }) {
-
-  
+function List({ itemList, getItems, isEditMode }) {
   // DELETE
   const deleteItem = (id) => {
     axios
@@ -40,36 +50,65 @@ function List({ itemList ,getItems, isEditMode }) {
   return (
     <div className="List">
       {itemList.map((item) => (
-        <div key={item.id} className="Item" onClick={() => {buyItem(item.id)}}>
-          <h3 className="Item-header">{item.name}</h3>
+        <Card
+          variant="outlined"
+          key={item.id}
+          onClick={() => {
+            buyItem(item.id);
+          }}
+          sx={{
+            width: "25%",
+            marginBottom: "20px",
+            backgroundColor: "#3f50b5",
+          }}
+        >
+          <CardHeader
+            avatar={
+              <Avatar sx={{ bgcolor: red[500] }} aria-label="Item">
+                I
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={item.name}
+            subheader={item.quantity + " " + item.unit}
+          />
           {item.displayImage ? (
-            <img src={item.displayImage} alt={item.name} className="Item-image"/>
+            <CardMedia
+              component="img"
+              height="194"
+              image={item.displayImage}
+              alt={item.name}
+            />
           ) : (
             <div className="no-image">
               <span>No Image</span>
             </div>
           )}
-          <h4 className="Item-quantity">
-            {item.quantity + ' ' + item.unit}
-          </h4>
-          <input type="checkbox" onChange={() => {
-                  buyItem(item.id)
-                  
-                }} checked={item.bought} className="Item-check"></input>
-              
-          {isEditMode && (
-            <div>
-                
-              <button
+          <CardActions>
+            <Checkbox
+              onChange={() => {
+                buyItem(item.id);
+              }}
+              checked={item.bought}
+              color="secondary"
+            />
+            {isEditMode && (
+              <Button
+                size="small"
                 onClick={() => {
                   deleteItem(item.id);
                 }}
+                color="error"
               >
                 Remove
-              </button>
-            </div>
-          )}
-        </div>
+              </Button>
+            )}
+          </CardActions>
+        </Card>
       ))}
     </div>
   );
